@@ -50,7 +50,7 @@ export default function Hero() {
               animate="visible"
               src={HeroImg}
               alt=""
-              className="w-[350px] md:w-[550px] xl:w-[700px] drop-shadow"
+              className="w-[350px] md:w-[550px] xl:w-[600px] drop-shadow"
             />
           </div>
         </div>
