@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import Features from "./components/Equipment/Features/Features";
+import Banner from "./components/Banner/Banner";
+// import BgImage from "./assets/bg.jpg";
+import BannerImage1 from "./assets/banner.png";
+import GalleryTab from "./components/GalleryTab/GalleryTab";
+import Testimonials from "./components/Testimonials/Testimonials";
+import BannerTwo from "./components/Banner/BannerTwo";
+import Footer from "./components/Footer/Footer";
 
-function App() {
-  const [count, setCount] = useState(0)
+const BannerData = {
+  image: BannerImage1,
+  title: "Great Bussiness Strategies for Your Bussiness",
+  description:
+    "Entrepreneurship is a passion, not a job, we are a company geared towards facilitating the success of the ideas of distinct projects according to the need of the local market in Qatar where we provide support and development of the ideas of entrepreneurs through a range of resources and services developed by the afaaq",
+};
 
+// const bgStyle = {
+//   backgroundImage: `url(${BgImage})`,
+//   backgroundSize: "cover",
+//   backgroundPosition: "center",
+//   backgroundRepeat: "no-repeat",
+//   backgroundAttachment: "fixed",
+//   minHeight: "100vh",
+// };
+
+export default function App() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Navbar />
+        <Hero />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <Features />
+      <Banner {...BannerData} />
+      <GalleryTab />
+      <Testimonials />
+      <BannerTwo />
+      <Footer />
+    </div>
+  );
 }
-
-export default App
